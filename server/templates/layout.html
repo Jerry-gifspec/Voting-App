@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Voting System{% endblock %}</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/admin/dashboard">Admin Dashboard</a></li>
+        <li><a href="/register">Register Voter</a></li>
+        <li><a href="/tally">Vote Tally</a></li>
+        <li><a href="/voter/login">Voter Login</a></li>
+        <li><a href="/voter/list">Voter List</a></li>
+        <li><a href="/admin/login">Admin Login</a></li>
+        <li><a href="/candidates">Candidates List</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      {% block content %}
+      <!-- Default welcome message for the landing page -->
+      <section class="landing-section">
+        <h1>Welcome to the Online Voting System</h1>
+        <p>Cast your vote, manage candidates, and explore election results!</p>
+      </section>
+      {% endblock %}
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Online Voting System. All rights reserved.</p>
+    </footer>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>

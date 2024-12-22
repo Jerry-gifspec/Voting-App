@@ -1,0 +1,22 @@
+<!-- tally.html -->
+{% extends 'layout.html' %} {% block content %}
+<h2>Vote Tally</h2>
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th>Candidate</th>
+      <th>Position</th>
+      <th>Total Votes</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for candidate, vote_count in results %}
+    <tr>
+      <td>{{ candidate.name }}</td>
+      <td>{{ candidate.position.name }}</td>
+      <td>{{ vote_count }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

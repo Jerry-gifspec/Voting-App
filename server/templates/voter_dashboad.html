@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voter Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2>Voter Dashboard</h2>
+      <h4>Choose a position to vote</h4>
+      {% for position in positions %}
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ position.position_name }}</h5>
+          <form
+            method="POST"
+            action="{{ url_for('vote', candidate_id=position.id) }}">
+            <button type="submit" class="btn btn-primary">
+              Vote for this Position
+            </button>
+          </form>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
